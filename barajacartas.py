@@ -1,7 +1,8 @@
 import random
 
 
-num_jugadores = int(input('¿Cuántos jugadores participareis en esta partida?'))
+num_jugadores = int(
+    input('¿Cuántos jugadores participareis en esta partida? 10'))
 palos = ['Oros', 'Copas', 'Espadas', 'Bastos']
 numeros = ['1', '2', '3', '4', '5', '6', '7', 'SOTA', 'CABALLO', 'REY']
 
@@ -27,9 +28,10 @@ for i, mano in enumerate(mano, 1):
     print('Jugador', i, ':', mano)
     if '2 de Oros' in mano:
         inicio_partida = i
-    elif inicio_partida is not None:
-        print('El jugador', inicio_partida, 'empieza da partida')
-    else:
-        print('La carta de 2 de oros no se encuentra, ¿Desea repartir de nuevo?')
+
+if inicio_partida is not None:
+    print('El jugador', inicio_partida, 'empieza da partida')
+else:
+    print('La carta de 2 de oros no se encuentra, ¿Desea repartir de nuevo?')
 
 '''print(baraja_espanola)'''
