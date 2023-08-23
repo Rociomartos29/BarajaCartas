@@ -22,7 +22,14 @@ for i in range(0, 40, 4):
 
 mano = [baraja_mezclada[i::num_jugadores] for i in range(num_jugadores)]
 
+inicio_partida = None
 for i, mano in enumerate(mano, 1):
     print('Jugador', i, ':', mano)
+    if '2 de Oros' in mano:
+        inicio_partida = i
+    elif inicio_partida is not None:
+        print('El jugador', inicio_partida, 'empieza da partida')
+    else:
+        print('La carta de 2 de oros no se encuentra, ¿Desea repartir de nuevo?')
 
 '''print(baraja_espanola)'''
